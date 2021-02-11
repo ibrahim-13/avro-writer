@@ -1,24 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
+function App(): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="writer">
+      <h1 className="heading">Avro Writer</h1>
+      <form className="lang-form">
+        <input type="radio" id="lang_en" name="lang" value="en" />
+        <label htmlFor="lang_en">English</label>
+        <input type="radio" id="lang_bn" name="lang" value="bn" defaultChecked={true} />
+        <label htmlFor="lang_bn">বাংলা</label>
+      </form>
+      <textarea className="text-area" />
     </div>
   );
 }
