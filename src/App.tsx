@@ -37,7 +37,7 @@ function App(): JSX.Element {
         <label htmlFor="lang_bn">বাংলা</label>
       </form>
       <InfoKeyBinding />
-      <textarea className="text-area" />
+      <textarea className="text-area" wrap="hard" />
     </div>
   );
 }
