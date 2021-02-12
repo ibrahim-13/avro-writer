@@ -15,12 +15,17 @@ function GithubLink(props: GithubLinkProps): JSX.Element {
 }
 
 export function Header(): JSX.Element {
+  const [show, setShow] = React.useState<boolean>(true);
+
+  if (!show) return <button className="header-btn" onClick={(): void => setShow(true)}><b>Avro Writer</b></button>;
+
   return (
-    <div>
-      <h1 className="heading">
+    <div className="header">
+      <h2 className="header-label">
         Avro Writer
-        <span className="heading-comment">Avro in PWA</span>
-      </h1>
+        <span className="header-comment">Avro in PWA</span>
+        <span className="header-cross-btn"><button onClick={(): void => setShow(false)}><b>X</b></button></span>
+      </h2>
       <div className="header-links">
         <GithubLink label="Avro-Pad" link="https://github.com/omicronlab/avro-pad/" />
         <GithubLink label="Avro Writer" link="https://github.com/ibrahim-13/avro-writer" />

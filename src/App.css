@@ -1,11 +1,20 @@
-.heading {
+.header-label {
   text-align: center;
   color: darkgray;
 }
 
-.heading-comment {
-  font-size: 1rem;
+.header-comment {
+  font-size: 0.8rem;
   padding-left: 15px;
+}
+
+.header-cross-btn {
+  display: none;
+}
+
+.header-btn {
+  margin: 10px;
+  font-size: 1.3rem;
 }
 
 .writer {
@@ -57,5 +66,10 @@ textarea.text-area:hover {
 @media screen and (max-width: 768px) {
   .info-keybinding {
     display: none;
+  }
+
+  .header-cross-btn {
+    display: inline;
+    padding: 12px;
   }
 }
