@@ -3,7 +3,6 @@ import './App.css';
 import { Header } from './Header';
 import { InfoKeyBinding } from './InfoKeyBinding';
 import { LocalStorageAccess } from './localstorage';
-import { SuggestionPopover } from './popover';
 
 function App(): JSX.Element {
   const [lang, setLang] = React.useState<string | null>(LocalStorageAccess.LangSelection || 'bn');
@@ -38,7 +37,6 @@ function App(): JSX.Element {
         <label htmlFor="lang_bn">বাংলা</label>
       </form>
       <InfoKeyBinding />
-      <SuggestionPopover />
       <textarea className="text-area" wrap="hard" />
     </div>
   );
