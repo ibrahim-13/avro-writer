@@ -63,6 +63,31 @@ textarea.text-area:hover {
   color: crimson;
 }
 
+.suggestion {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: auto;
+  align-items: center;
+  margin-top: 7px;
+}
+
+.suggest {
+  display: block;
+  cursor: pointer;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  border: 1px solid;
+  padding: 5px;
+}
+
+.selected {
+  background: white;
+  color: black;
+  font-weight: 500;
+}
+
 @media screen and (max-width: 768px) {
   .info-keybinding {
     display: none;

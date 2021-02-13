@@ -1,13 +1,13 @@
 import { wrap } from 'comlink';
 
-type TSuggest = {
+export type TAvroSuggestion = {
   prevSelection: number,
   words: string[],
 }
 
 type TAvroPhonetic = {
   getVersion: () => string;
-  getSuggestion: (queryText: string) => TSuggest;
+  getSuggestion: (queryText: string) => TAvroSuggestion;
   setCommit: (queryText: string, bnValue: string) => void;
 }
 
