@@ -3,11 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import AvroWorker from './avroLib';
-
-(window as any).avro = AvroWorker;
-AvroWorker.getSuggestion('kemon').then(v => console.log(v));
-AvroWorker.setCommit('kemon', "ক্যামন");
 
 ReactDOM.render(
   <React.StrictMode>
