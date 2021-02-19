@@ -14,15 +14,17 @@ function App(): JSX.Element {
     const newLang = ev.target.id === 'lang_en' ? 'en' : 'bn';
     LocalStorageAccess.LangSelection = newLang;
     setLang(newLang);
+    setSuggestions(undefined);
   }, []);
 
   const textChange = React.useCallback(
     async ({ target: { value: inputText } }: React.ChangeEvent<HTMLTextAreaElement>): Promise<void> => {
+      if (lang !== 'bn') return;
       const parts = inputText.split(' ');
       const last = parts[parts.length - 1];
       setSuggestions(await AvroWorker.getSuggestion(last));
     },
-    []
+    [lang]
   );
 
   const onSuggestSelect = React.useCallback((word: string) => {
