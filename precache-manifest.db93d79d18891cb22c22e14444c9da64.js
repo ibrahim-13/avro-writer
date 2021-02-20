@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9fc802afccf8011c60b0eae6b4dd72fb",
+    "revision": "960b5296a4cfa532cecc6f979e4db9a2",
     "url": "/avro-writer/index.html"
   },
   {
-    "revision": "fa50416d493e518ac361",
+    "revision": "273b2d334e9ce31fa7ce",
     "url": "/avro-writer/static/css/main.456e743e.chunk.css"
   },
   {
-    "revision": "411cf22a8d2ab975d5d0",
-    "url": "/avro-writer/static/js/2.152de90f.chunk.js"
+    "revision": "74ddaf9659fc408a545a",
+    "url": "/avro-writer/static/js/2.1b936842.chunk.js"
   },
   {
     "revision": "570d362d673dab785e62d2b8563e1118",
-    "url": "/avro-writer/static/js/2.152de90f.chunk.js.LICENSE.txt"
+    "url": "/avro-writer/static/js/2.1b936842.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fa50416d493e518ac361",
-    "url": "/avro-writer/static/js/main.27b69d3e.chunk.js"
+    "revision": "273b2d334e9ce31fa7ce",
+    "url": "/avro-writer/static/js/main.7bc076df.chunk.js"
   },
   {
     "revision": "222dab8ae4f073dd895e",
