@@ -17,16 +17,6 @@ function App(): JSX.Element {
     setSuggestions(undefined);
   }, []);
 
-  const textChange = React.useCallback(
-    async ({ target: { value: inputText } }: React.ChangeEvent<HTMLTextAreaElement>): Promise<void> => {
-      if (lang !== 'bn') return;
-      const parts = inputText.split(' ');
-      const last = parts[parts.length - 1];
-      setSuggestions(await AvroWorker.getSuggestion(last));
-    },
-    [lang]
-  );
-
   const onSuggestSelect = React.useCallback((word: string) => {
     if (ref.current) {
       const parts = ref.current.value.split(' ');
@@ -42,15 +32,6 @@ function App(): JSX.Element {
         const newLang = currentLang === 'en' ? 'bn' : 'en';
         LocalStorageAccess.LangSelection = newLang;
         setLang(newLang);
-      } else {
-        const evKey = ev.key.toLowerCase();
-        if (evKey === 'arrowright') {
-          //
-        } else if (evKey === 'arrowleft') {
-          //
-        } else if (evKey === 'arrowleft') {
-          //
-        }
       }
     }
     window.addEventListener("keyup", onKeyUp);
@@ -58,6 +39,46 @@ function App(): JSX.Element {
       window.removeEventListener('keyup', onKeyUp);
     };
   }, []);
+
+  const arrowKeyListener = React.useCallback((ev: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    ev.persist();
+    const evKey = ev.key.toLowerCase();
+    if (evKey === 'arrowright') {
+      setSuggestions(s => {
+        if (s) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          let currentSelection = s.prevSelection + 1;
+          currentSelection = currentSelection === s.words.length ? 0 : currentSelection;
+          return { ...s, prevSelection: currentSelection };
+        }
+        return s;
+      });
+    } else if (evKey === 'arrowleft') {
+      setSuggestions(s => {
+        if (s) {
+          ev.preventDefault();
+          ev.stopPropagation();
+          let currentSelection = s.prevSelection - 1;
+          currentSelection = currentSelection === -1 ? (s.words.length - 1) : currentSelection;
+          return { ...s, prevSelection: currentSelection };
+        }
+        return s;
+      });
+    }
+  }, []);
+
+  async function textChange({ target: { value: inputText } }: React.ChangeEvent<HTMLTextAreaElement>): Promise<void> {
+    if (lang !== 'bn') return;
+    if (inputText.endsWith('\n') && suggestions) {
+      onSuggestSelect(suggestions.words[suggestions.prevSelection]);
+      setSuggestions(undefined);
+      return;
+    }
+    const parts = inputText.split(' ');
+    const last = parts[parts.length - 1];
+    setSuggestions(await AvroWorker.getSuggestion(last));
+  }
 
   return (
     <div className="writer">
@@ -75,6 +96,7 @@ function App(): JSX.Element {
         className="text-area"
         wrap="hard"
         defaultValue=""
+        onKeyDown={arrowKeyListener}
         onChange={textChange}
       />
     </div>
