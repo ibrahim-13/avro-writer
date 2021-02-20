@@ -10,11 +10,11 @@ export function Suggestion(props: Props): JSX.Element {
   return (
     <div className="suggestion">
       {props.suggestions && props.suggestions.words.length > 0 ? (
-        props.suggestions.words.map(s => (
+        props.suggestions.words.map((s, i) => (
           <div
             key={s}
             style={{ cursor: 'pointer' }}
-            className="suggest"
+            className={`suggest${props.suggestions?.prevSelection === i ? ' selected' : ''}`}
             onClick={(): void => props.onSelect?.(s)}
           >
             {s}

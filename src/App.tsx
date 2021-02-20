@@ -42,6 +42,15 @@ function App(): JSX.Element {
         const newLang = currentLang === 'en' ? 'bn' : 'en';
         LocalStorageAccess.LangSelection = newLang;
         setLang(newLang);
+      } else {
+        const evKey = ev.key.toLowerCase();
+        if (evKey === 'arrowright') {
+          //
+        } else if (evKey === 'arrowleft') {
+          //
+        } else if (evKey === 'arrowleft') {
+          //
+        }
       }
     }
     window.addEventListener("keyup", onKeyUp);
