@@ -11,7 +11,9 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-console.log(`Build Verions: ${process.env.REACT_APP_VERSION}`);
+if (process.env.NODE_ENV === 'production') {
+  console.log(`Build Verions: ${process.env.REACT_APP_VERSION}`);
+}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

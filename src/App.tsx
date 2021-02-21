@@ -70,6 +70,10 @@ function App(): JSX.Element {
 
   async function textChange({ target: { value: inputText } }: React.ChangeEvent<HTMLTextAreaElement>): Promise<void> {
     if (lang !== 'bn') return;
+    if (!inputText) {
+      setSuggestions(undefined);
+      return;
+    }
     if (inputText.endsWith('\n') && suggestions) {
       onSuggestSelect(suggestions.words[suggestions.prevSelection]);
       setSuggestions(undefined);
