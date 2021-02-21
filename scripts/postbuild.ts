@@ -14,7 +14,7 @@ const vars = envProduction.split('\n');
 for (let i = 0; i < vars.length; i++) {
   const _var = vars[i].split('=');
   if (_var[0] && _var[1] && _var[0] === 'PUBLIC_URL') {
-    const urlPrefix = _var[1];
+    const urlPrefix = _var[1].trim();
     const avroWorkerJs = fs.readFileSync(PathAvroWorkerJs).toString();
     const newAvroWorkerJs = avroWorkerJs
       .replace('importScripts("/avro.min.js");', `importScripts("${urlPrefix}/avro.min.js");`)
