@@ -28,6 +28,7 @@ function App(): JSX.Element {
         parts[parts.length - 1] = word;
         ref.current.value = parts.join(' ') + ref.current.value.slice(ref.current.selectionStart);
       }
+      LocalStorageAccess.PrevInput = ref.current.value;
     }
   }, []);
 
@@ -79,6 +80,7 @@ function App(): JSX.Element {
       value: inputText, selectionStart
     }
   }: React.ChangeEvent<HTMLTextAreaElement>): Promise<void> {
+    LocalStorageAccess.PrevInput = inputText;
     if (lang !== 'bn') return;
     if (!inputText) {
       setSuggestions(undefined);
@@ -109,7 +111,7 @@ function App(): JSX.Element {
         ref={ref}
         className="text-area"
         wrap="hard"
-        defaultValue=""
+        defaultValue={LocalStorageAccess.PrevInput || ''}
         onKeyDown={arrowKeyListener}
         onChange={textChange}
       />
