@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/avro-writer/precache-manifest.db93d79d18891cb22c22e14444c9da64.js"
+  "/avro-writer/precache-manifest.9903e448eb17dbac595e93d0fd5fa821.js"
 );
 
 self.addEventListener('message', (event) => {

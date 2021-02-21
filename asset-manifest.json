@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/avro-writer/static/css/main.456e743e.chunk.css",
-    "main.js": "/avro-writer/static/js/main.7bc076df.chunk.js",
-    "main.js.map": "/avro-writer/static/js/main.7bc076df.chunk.js.map",
+    "main.js": "/avro-writer/static/js/main.ff77f141.chunk.js",
+    "main.js.map": "/avro-writer/static/js/main.ff77f141.chunk.js.map",
     "runtime-main.js": "/avro-writer/static/js/runtime-main.62bc3877.js",
     "runtime-main.js.map": "/avro-writer/static/js/runtime-main.62bc3877.js.map",
-    "static/js/2.1b936842.chunk.js": "/avro-writer/static/js/2.1b936842.chunk.js",
-    "static/js/2.1b936842.chunk.js.map": "/avro-writer/static/js/2.1b936842.chunk.js.map",
+    "static/js/2.8de75ccc.chunk.js": "/avro-writer/static/js/2.8de75ccc.chunk.js",
+    "static/js/2.8de75ccc.chunk.js.map": "/avro-writer/static/js/2.8de75ccc.chunk.js.map",
     "index.html": "/avro-writer/index.html",
-    "precache-manifest.db93d79d18891cb22c22e14444c9da64.js": "/avro-writer/precache-manifest.db93d79d18891cb22c22e14444c9da64.js",
+    "precache-manifest.9903e448eb17dbac595e93d0fd5fa821.js": "/avro-writer/precache-manifest.9903e448eb17dbac595e93d0fd5fa821.js",
     "service-worker.js": "/avro-writer/service-worker.js",
     "static/css/main.456e743e.chunk.css.map": "/avro-writer/static/css/main.456e743e.chunk.css.map",
-    "static/js/2.1b936842.chunk.js.LICENSE.txt": "/avro-writer/static/js/2.1b936842.chunk.js.LICENSE.txt"
+    "static/js/2.8de75ccc.chunk.js.LICENSE.txt": "/avro-writer/static/js/2.8de75ccc.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.62bc3877.js",
-    "static/js/2.1b936842.chunk.js",
+    "static/js/2.8de75ccc.chunk.js",
     "static/css/main.456e743e.chunk.css",
-    "static/js/main.7bc076df.chunk.js"
+    "static/js/main.ff77f141.chunk.js"
   ]
 }
