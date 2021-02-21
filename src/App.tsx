@@ -19,9 +19,15 @@ function App(): JSX.Element {
 
   const onSuggestSelect = React.useCallback((word: string) => {
     if (ref.current) {
-      const parts = ref.current.value.split(' ');
-      parts[parts.length - 1] = word;
-      ref.current.value = parts.join(' ') + ' ';
+      if (ref.current.selectionStart === ref.current.value.length) {
+        const parts = ref.current.value.split(' ');
+        parts[parts.length - 1] = word;
+        ref.current.value = parts.join(' ') + ' ';
+      } else {
+        const parts = ref.current.value.slice(0, ref.current.selectionStart).split(' ');
+        parts[parts.length - 1] = word;
+        ref.current.value = parts.join(' ') + ref.current.value.slice(ref.current.selectionStart);
+      }
     }
   }, []);
 
@@ -68,18 +74,22 @@ function App(): JSX.Element {
     }
   }, []);
 
-  async function textChange({ target: { value: inputText } }: React.ChangeEvent<HTMLTextAreaElement>): Promise<void> {
+  async function textChange({
+    target: {
+      value: inputText, selectionStart
+    }
+  }: React.ChangeEvent<HTMLTextAreaElement>): Promise<void> {
     if (lang !== 'bn') return;
     if (!inputText) {
       setSuggestions(undefined);
       return;
     }
-    if (inputText.endsWith('\n') && suggestions) {
+    if (inputText.slice(0, selectionStart).endsWith('\n') && suggestions) {
       onSuggestSelect(suggestions.words[suggestions.prevSelection]);
       setSuggestions(undefined);
       return;
     }
-    const parts = inputText.split(' ');
+    const parts = inputText.slice(0, selectionStart).split(' ');
     const last = parts[parts.length - 1];
     setSuggestions(await AvroWorker.getSuggestion(last));
   }
