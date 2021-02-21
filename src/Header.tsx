@@ -1,4 +1,5 @@
 import React from 'react';
+import GithubMark from './GitHub-Mark.png';
 
 type GithubLinkProps = {
   link: string;
@@ -8,7 +9,7 @@ type GithubLinkProps = {
 function GithubLink(props: GithubLinkProps): JSX.Element {
   return (
     <div className="github-link">
-      <img width="30px" height="30px" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="github-logo" />
+      <img width="30px" height="30px" src={GithubMark} alt="github-mark" />
       <a href={props.link} target="_blank" rel="noopener noreferrer">{props.label}</a>
     </div>
   );
