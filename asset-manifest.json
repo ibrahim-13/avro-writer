@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/avro-writer/static/css/main.f3fdd96b.chunk.css",
-    "main.js": "/avro-writer/static/js/main.d5a9f426.chunk.js",
-    "main.js.map": "/avro-writer/static/js/main.d5a9f426.chunk.js.map",
+    "main.css": "/avro-writer/static/css/main.7c242622.chunk.css",
+    "main.js": "/avro-writer/static/js/main.1a1668f1.chunk.js",
+    "main.js.map": "/avro-writer/static/js/main.1a1668f1.chunk.js.map",
     "runtime-main.js": "/avro-writer/static/js/runtime-main.bcf8fc22.js",
     "runtime-main.js.map": "/avro-writer/static/js/runtime-main.bcf8fc22.js.map",
-    "static/js/2.fc7324f7.chunk.js": "/avro-writer/static/js/2.fc7324f7.chunk.js",
-    "static/js/2.fc7324f7.chunk.js.map": "/avro-writer/static/js/2.fc7324f7.chunk.js.map",
+    "static/js/2.ef2d2fd8.chunk.js": "/avro-writer/static/js/2.ef2d2fd8.chunk.js",
+    "static/js/2.ef2d2fd8.chunk.js.map": "/avro-writer/static/js/2.ef2d2fd8.chunk.js.map",
     "index.html": "/avro-writer/index.html",
     "service-worker.js": "/avro-writer/service-worker.js",
     "service-worker.js.map": "/avro-writer/service-worker.js.map",
-    "static/css/main.f3fdd96b.chunk.css.map": "/avro-writer/static/css/main.f3fdd96b.chunk.css.map",
-    "static/js/2.fc7324f7.chunk.js.LICENSE.txt": "/avro-writer/static/js/2.fc7324f7.chunk.js.LICENSE.txt"
+    "static/css/main.7c242622.chunk.css.map": "/avro-writer/static/css/main.7c242622.chunk.css.map",
+    "static/js/2.ef2d2fd8.chunk.js.LICENSE.txt": "/avro-writer/static/js/2.ef2d2fd8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bcf8fc22.js",
-    "static/js/2.fc7324f7.chunk.js",
-    "static/css/main.f3fdd96b.chunk.css",
-    "static/js/main.d5a9f426.chunk.js"
+    "static/js/2.ef2d2fd8.chunk.js",
+    "static/css/main.7c242622.chunk.css",
+    "static/js/main.1a1668f1.chunk.js"
   ]
 }
