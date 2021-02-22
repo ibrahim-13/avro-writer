@@ -19,6 +19,7 @@ function App(): JSX.Element {
 
   const onSuggestSelect = React.useCallback((word: string) => {
     if (ref.current) {
+      let caretPosition = ref.current.value.length + word.length;
       if (ref.current.selectionStart === ref.current.value.length) {
         const parts = ref.current.value.split(' ');
         parts[parts.length - 1] = word;
@@ -26,8 +27,13 @@ function App(): JSX.Element {
       } else {
         const parts = ref.current.value.slice(0, ref.current.selectionStart).split(' ');
         parts[parts.length - 1] = word;
-        ref.current.value = parts.join(' ') + ref.current.value.slice(ref.current.selectionStart);
+        const updatedValue = parts.join(' ');
+        caretPosition = updatedValue.length;
+        ref.current.value = updatedValue + ref.current.value.slice(ref.current.selectionStart);
       }
+      ref.current.focus();
+      ref.current.selectionStart = caretPosition;
+      ref.current.selectionEnd = caretPosition;
       LocalStorageAccess.PrevInput = ref.current.value;
     }
   }, []);
@@ -72,6 +78,8 @@ function App(): JSX.Element {
         }
         return s;
       });
+    } else if (evKey === 'escape') {
+      setSuggestions(undefined);
     }
   }, []);
 
