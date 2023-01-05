@@ -9,7 +9,7 @@
 // service worker, and the Workbox build step will be skipped.
 
 import { clientsClaim } from 'workbox-core';
-import { ExpirationPlugin } from 'workbox-expiration';
+// import { ExpirationPlugin } from 'workbox-expiration';
 import { precacheAndRoute, createHandlerBoundToURL } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
@@ -59,12 +59,12 @@ registerRoute(
 );
 
 registerRoute(
-  process.env.PUBLIC_URL + '/avro.worker.202102220019.js',
+  process.env.PUBLIC_URL + '/avro.worker.202301052101.js',
   new StaleWhileRevalidate()
 );
 
 registerRoute(
-  process.env.PUBLIC_URL + '/comlink.min.202102220019.js',
+  process.env.PUBLIC_URL + '/comlink.min.202301052101.js',
   new StaleWhileRevalidate()
 );
 
