@@ -11,7 +11,7 @@ type TAvroPhonetic = {
   setCommit: (queryText: string, bnValue: string) => void;
 }
 
-const workerUrl = `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : ''}/avro.worker.202102220019.js`; 
+const workerUrl = `${process.env.PUBLIC_URL ? process.env.PUBLIC_URL : ''}/avro.worker.202301052101.js`; 
 
 const worker = new Worker(workerUrl);
 const avroWroker = wrap<TAvroPhonetic>(worker);

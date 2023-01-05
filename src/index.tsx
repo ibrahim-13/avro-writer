@@ -1,16 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import './index.css';
 import './keys.css';
 import App from './App';
 import * as serviceWorker from './serviceWorkerRegistration';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(<App />);
 
 if (process.env.NODE_ENV === 'production') {
   console.log(`Build Verions: ${process.env.REACT_APP_VERSION}`);

@@ -1,4 +1,3 @@
-import React from 'react';
 import { TAvroSuggestion } from './avroLib';
 
 type Props = {

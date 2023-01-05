@@ -1,5 +1,5 @@
 import React from 'react';
-import GithubMark from './GitHub-Mark.png';
+import ExternalLinkImage from './ExternalLinkImage.png';
 
 type GithubLinkProps = {
   link: string;
@@ -9,7 +9,7 @@ type GithubLinkProps = {
 function GithubLink(props: GithubLinkProps): JSX.Element {
   return (
     <div className="github-link">
-      <img width="30px" height="30px" src={GithubMark} alt="github-mark" />
+      <img width="30px" height="30px" src={ExternalLinkImage} alt="github-mark" />
       <a href={props.link} target="_blank" rel="noopener noreferrer">{props.label}</a>
     </div>
   );
@@ -30,6 +30,7 @@ export function Header(): JSX.Element {
       <div className="header-links">
         <GithubLink label="Avro-Pad" link="https://github.com/omicronlab/avro-pad/" />
         <GithubLink label="Avro Writer" link="https://github.com/ibrahim-13/avro-writer" />
+        <GithubLink label="Layout" link="/avro-keyboard-layout.png" />
       </div>
     </div>
   );

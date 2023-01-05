@@ -1,5 +1,3 @@
-import React from 'react';
-
 export function InfoKeyBinding(): JSX.Element {
   return (
     <div className="info-keybinding">
