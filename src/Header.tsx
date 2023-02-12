@@ -30,7 +30,7 @@ export function Header(): JSX.Element {
       <div className="header-links">
         <GithubLink label="Avro-Pad" link="https://github.com/omicronlab/avro-pad/" />
         <GithubLink label="Avro Writer" link="https://github.com/ibrahim-13/avro-writer" />
-        <GithubLink label="Layout" link="/avro-keyboard-layout.png" />
+        <GithubLink label="Layout" link={`${process.env.PUBLIC_URL}/avro-keyboard-layout.png`} />
       </div>
     </div>
   );
