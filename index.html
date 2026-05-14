@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <base href="/avro-writer/" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="A small PWA for writing Phonetic Bangla" />
+    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="manifest" href="manifest.json" />
+    <title>Avro Writer</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="comlink.min.202301052101.js"></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="writer">
+
+        <!-- Full header (visible by default, hidden on mobile via X button) -->
+        <div id="header-full" class="header">
+          <h2 class="header-label">
+            Avro Writer
+            <span class="header-comment">Avro in PWA</span>
+            <span class="header-cross-btn">
+              <button id="header-hide-btn"><b>X</b></button>
+            </span>
+          </h2>
+          <div class="header-links">
+            <div class="github-link">
+              <img width="30px" height="30px" src="external-link.png" alt="github-mark" />
+              <a href="https://github.com/omicronlab/avro-pad/" target="_blank" rel="noopener noreferrer">Avro-Pad</a>
+            </div>
+            <div class="github-link">
+              <img width="30px" height="30px" src="external-link.png" alt="github-mark" />
+              <a href="https://github.com/ibrahim-13/avro-writer" target="_blank" rel="noopener noreferrer">Avro Writer</a>
+            </div>
+            <div class="github-link">
+              <button id="layout-btn" onclick="document.getElementById('layout-dialog').showModal()"><b>Layout</b></button>
+            </div>
+            <div class="github-link">
+              <button id="install-btn" style="display:none"><b>Install</b></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Compact header button (hidden by default, shown when header is collapsed) -->
+        <button id="header-btn" class="header-btn" style="display:none"><b>Avro Writer</b></button>
+
+        <!-- Language selection -->
+        <form class="lang-form" id="lang-form">
+          <input type="radio" id="lang_en" name="lang" value="en" />
+          <label for="lang_en">English</label>
+          <input type="radio" id="lang_bn" name="lang" value="bn" />
+          <label for="lang_bn">বাংলা</label>
+        </form>
+
+        <!-- Keyboard shortcut hints (hidden on mobile via CSS media query) -->
+        <div class="info-keybinding">
+          (<kbd>CTRL</kbd> + <kbd>.</kbd> to Toggle Language,
+          <kbd>&larr;</kbd> and <kbd>&rarr;</kbd> to traverse suggestions,
+          <kbd>ENTER</kbd> to apply suggestion,
+          <kbd>ESC</kbd> to clear suggestions)
+        </div>
+
+        <!-- Suggestion chips — initial placeholder, content managed by app.js -->
+        <div class="suggestion" id="suggestion-list">
+          <div class="suggest">No suggestion</div>
+        </div>
+
+        <!-- Main text input (uncontrolled: value managed via direct DOM access) -->
+        <textarea
+          id="text-area"
+          class="text-area"
+          wrap="hard"
+        ></textarea>
+
+      </div>
+    </div>
+    <dialog id="layout-dialog" onclick="if(event.target===this)this.close()">
+      <button autofocus onclick="document.getElementById('layout-dialog').close()"><b>Close</b></button>
+      <img src="avro-keyboard-layout.png" alt="Avro keyboard layout" />
+    </dialog>
+  </body>
+</html>

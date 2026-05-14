@@ -1,5 +1,5 @@
-importScripts("/avro.min.202102220019.js");
-importScripts("/comlink.min.202301052101.js");
+importScripts("./avro.min.202102220019.js");
+importScripts("./comlink.min.202301052101.js");
 
 var CandidateSelection = {};
 
