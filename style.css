@@ -87,32 +87,6 @@ textarea.text-area:hover {
   color: crimson;
 }
 
-.suggestion {
-  display: flex;
-  overflow-y: hidden;
-  overflow-x: auto;
-  align-items: center;
-  margin-top: 7px;
-  height: 4.3rem;
-}
-
-.suggest {
-  display: block;
-  cursor: pointer;
-  margin-top: 11px;
-  margin-bottom: 11px;
-  margin-left: 5px;
-  margin-right: 5px;
-  border: 1px solid;
-  padding: 5px;
-}
-
-.selected {
-  background: white;
-  color: black;
-  font-weight: 500;
-  border: 1px solid red;
-}
 
 @media screen and (max-width: 768px) {
   .info-keybinding {
@@ -123,6 +97,66 @@ textarea.text-area:hover {
     display: inline;
     padding: 12px;
   }
+}
+
+/* ─── Action Bar (Copy / Clear) ─────────────────────────────────────────────── */
+
+.action-bar {
+  display: flex;
+  gap: 8px;
+  padding: 4px 1rem;
+}
+
+.action-bar button {
+  padding: 4px 14px;
+  background: #333;
+  color: white;
+  border: 1px solid #666;
+  border-radius: 3px;
+}
+
+.action-bar button:hover {
+  background: #444;
+}
+
+/* ─── Caret-Position Suggestion Popover ─────────────────────────────────────── */
+
+.caret-popover {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #555;
+  background: #1e1e1e;
+  color: white;
+  min-width: 120px;
+  max-width: 220px;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+.caret-suggest {
+  display: block;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #333;
+  font-size: 0.95rem;
+}
+
+.caret-suggest:last-child {
+  border-bottom: none;
+}
+
+.caret-suggest:hover {
+  background: #2e2e2e;
+}
+
+.caret-suggest.selected {
+  background: white;
+  color: black;
+  font-weight: 500;
+  border-bottom: 1px solid #ccc;
 }
 
 /* ─── Layout Dialog ─────────────────────────────────────────────────────────── */

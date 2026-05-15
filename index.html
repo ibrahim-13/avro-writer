@@ -3,15 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <base href="/avro-writer/" />
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="assets/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="A small PWA for writing Phonetic Bangla" />
-    <link rel="apple-touch-icon" href="logo192.png" />
+    <link rel="apple-touch-icon" href="assets/logo192.png" />
     <link rel="manifest" href="manifest.json" />
     <title>Avro Writer</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="comlink.min.202301052101.js"></script>
+    <script src="lib/comlink.min.202301052101.js"></script>
     <script src="app.js" defer></script>
   </head>
   <body>
@@ -30,15 +30,12 @@
           </h2>
           <div class="header-links">
             <div class="github-link">
-              <img width="30px" height="30px" src="external-link.png" alt="github-mark" />
+              <img width="30px" height="30px" src="assets/external-link.png" alt="github-mark" />
               <a href="https://github.com/omicronlab/avro-pad/" target="_blank" rel="noopener noreferrer">Avro-Pad</a>
             </div>
             <div class="github-link">
-              <img width="30px" height="30px" src="external-link.png" alt="github-mark" />
+              <img width="30px" height="30px" src="assets/external-link.png" alt="github-mark" />
               <a href="https://github.com/ibrahim-13/avro-writer" target="_blank" rel="noopener noreferrer">Avro Writer</a>
-            </div>
-            <div class="github-link">
-              <button id="layout-btn" onclick="document.getElementById('layout-dialog').showModal()"><b>Layout</b></button>
             </div>
             <div class="github-link">
               <button id="install-btn" style="display:none"><b>Install</b></button>
@@ -60,14 +57,16 @@
         <!-- Keyboard shortcut hints (hidden on mobile via CSS media query) -->
         <div class="info-keybinding">
           (<kbd>CTRL</kbd> + <kbd>.</kbd> to Toggle Language,
-          <kbd>&larr;</kbd> and <kbd>&rarr;</kbd> to traverse suggestions,
+          <kbd>&uarr;</kbd> and <kbd>&darr;</kbd> to traverse suggestions,
           <kbd>ENTER</kbd> to apply suggestion,
           <kbd>ESC</kbd> to clear suggestions)
         </div>
 
-        <!-- Suggestion chips — initial placeholder, content managed by app.js -->
-        <div class="suggestion" id="suggestion-list">
-          <div class="suggest">No suggestion</div>
+        <!-- Layout / Copy / Clear action buttons -->
+        <div class="action-bar" id="action-bar">
+          <button id="layout-btn" onclick="document.getElementById('layout-dialog').showModal()"><b>Layout</b></button>
+          <button id="copy-btn"><b>Copy</b></button>
+          <button id="clear-btn"><b>Clear</b></button>
         </div>
 
         <!-- Main text input (uncontrolled: value managed via direct DOM access) -->
@@ -79,9 +78,12 @@
 
       </div>
     </div>
+    <!-- Caret-position suggestion popover, shown programmatically -->
+    <div id="caret-popover" popover="manual" class="caret-popover"></div>
+
     <dialog id="layout-dialog" onclick="if(event.target===this)this.close()">
       <button autofocus onclick="document.getElementById('layout-dialog').close()"><b>Close</b></button>
-      <img src="avro-keyboard-layout.png" alt="Avro keyboard layout" />
+      <img src="assets/avro-keyboard-layout.png" alt="Avro keyboard layout" />
     </dialog>
   </body>
 </html>

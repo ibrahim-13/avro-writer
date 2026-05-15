@@ -10,14 +10,14 @@ const PRECACHE_ASSETS = [
   './app.js',
   './style.css',
   './manifest.json',
-  './favicon.ico',
-  './logo192.png',
-  './logo512.png',
-  './external-link.png',
-  './avro-keyboard-layout.png',
-  './avro.min.202102220019.js',
-  './avro.worker.202301052101.js',
-  './comlink.min.202301052101.js',
+  './assets/favicon.ico',
+  './assets/logo192.png',
+  './assets/logo512.png',
+  './assets/external-link.png',
+  './assets/avro-keyboard-layout.png',
+  './lib/avro.min.202102220019.js',
+  './lib/avro.worker.202301052101.js',
+  './lib/comlink.min.202301052101.js',
 ];
 
 // Install: pre-cache all static assets.
